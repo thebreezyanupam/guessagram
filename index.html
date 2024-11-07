@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guessagram Game</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Default Theme Styles (Neon theme) */
+    .neon-text {
+      color: #00e5ff;
+      text-shadow: 0 0 10px #00e5ff, 0 0 20px #00e5ff, 0 0 30px #00e5ff;
+    }
+    .neon-border {
+      border: 2px solid #00e5ff;
+      box-shadow: 0 0 10px #00e5ff, 0 0 20px #00e5ff;
+    }
+    .neon-button {
+      background: linear-gradient(90deg, #0077ff, #00e5ff);
+      color: white;
+      text-shadow: 0 0 10px #0077ff, 0 0 20px #00e5ff;
+      transition: background 0.3s ease;
+    }
+    .neon-button:hover {
+      background: linear-gradient(90deg, #00e5ff, #0077ff);
+    }
+    /* Alternate Theme Styles */
+    .dark-theme {
+      background-color: #222;
+      color: #ffa500;
+    }
+    .dark-theme .neon-text {
+      color: #ffa500;
+      text-shadow: 0 0 10px #ffa500, 0 0 20px #ffa500, 0 0 30px #ffa500;
+    }
+    .dark-theme .neon-border {
+      border: 2px solid #ffa500;
+      box-shadow: 0 0 10px #ffa500, 0 0 20px #ffa500;
+    }
+    .dark-theme .neon-button {
+      background: linear-gradient(90deg, #ff5500, #ffa500);
+      text-shadow: 0 0 10px #ff5500, 0 0 20px #ffa500;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <nav class="w-full bg-gray-800 neon-border py-4">
+    <div class="container mx-auto flex justify-between items-center px-4">
+      <h1 class="text-3xl font-bold neon-text">Guessagram</h1>
+      <ul id="nav-links" class="flex space-x-6 items-center">
+        <li><a href="#" class="text-lg hover:text-blue-300">About Us</a></li>
+        <li><button id="theme-button" class="neon-button px-4 py-2 rounded-lg focus:outline-none">Change Theme</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Game Container -->
+  <main class="flex-grow flex items-center justify-center">
+    <div id="game-container" class="game-container bg-gray-800 neon-border rounded-lg shadow-lg p-6 max-w-md w-full text-center">
+      <h2 class="text-2xl font-bold text-gray-100 mb-4">Welcome to Guessagram</h2>
+      <button id="start-button" class="neon-button px-4 py-2 rounded-lg">Start Game</button>
+      <div id="game-content" class="hidden">
+        <p class="hint text-gray-400 mb-4">Hint: <span id="hint-text" class="font-semibold">Loading...</span></p>
+        <div class="word-display text-3xl font-mono tracking-wider mb-6" id="word-display"></div>
+        <p class="message text-gray-300 font-medium mb-6" id="message"></p>
+        <button id="new-game-button" class="hidden neon-button px-4 py-2 rounded-lg">New Game</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
