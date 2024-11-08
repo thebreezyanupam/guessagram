@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guessagram Game</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <nav class="w-full bg-gray-800 neon-border py-4">
+    <div class="container mx-auto flex justify-between items-center px-4">
+      <h1 class="text-3xl font-bold neon-text">Guessagram</h1>
+      <ul id="nav-links" class="flex space-x-6 items-center">
+        <li><a href="#" id="about-us-link" class="text-lg hover:text-blue-300">About Us</a></li>
+        <li><button id="theme-button" class="button-neon-blue px-4 py-2 rounded-lg focus:outline-none">Change Theme</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="main-content flex flex-col md:flex-row flex-grow p-4 space-y-4 md:space-y-0 md:space-x-4">
+
+    <!-- Game Container -->
+    <div class="game-container flex justify-center items-center md:w-4/5">
+      <div id="game-box" class="bg-gray-800 neon-border rounded-lg shadow-lg p-6 w-full max-w-md text-center">
+        <h2 class="text-2xl font-bold neon-text mb-4">Welcome to Guessagram</h2>
+        <button id="start-button" class="button-neon-blue px-4 py-2 rounded-lg">Start Game</button>
+        <div id="game-content" class="hidden">
+          <p class="hint text-gray-400 mb-4">Hint: <span id="hint-text" class="font-semibold">Loading...</span></p>
+          <div class="word-display text-3xl font-mono tracking-wider mb-6" id="word-display"></div>
+          <p class="message text-gray-300 font-medium mb-6" id="message"></p>
+          <button id="new-game-button" class="hidden button-neon-blue px-4 py-2 rounded-lg">New Game</button>
+          <div id="loading-indicator" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 24px;">Loading...</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar bg-gray-800 neon-border p-6 rounded-lg flex flex-col items-center space-y-6 md:w-1/5">
+      <div class="text-center">
+        <h3 class="text-lg font-bold neon-text">Game Info</h3>
+        <p>Level: <span id="level-display">1</span></p>
+        <p>Score: <span id="score-display">0</span></p>
+        <!-- Added lives-display here -->
+        <p>Lives: <span id="lives-display">3</span></p>
+      </div>
+      <div class="mt-8 w-full text-center">
+        <h3 class="text-lg font-bold neon-text mb-4">Shop</h3>
+        <button id="buy-chance" class="button-neon-blue w-full px-4 py-2 rounded-lg mb-4">Add Lives (100 pts)</button>
+        <button id="buy-reveal" class="button-neon-blue w-full px-4 py-2 rounded-lg">Reveal A Letter (150 pts)</button>
+      </div>
+    </aside>
+
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

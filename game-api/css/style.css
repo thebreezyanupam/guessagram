@@ -1,0 +1,144 @@
+
+@font-face {
+  font-family: 'Exo 2';
+  src: url('../public/fonts/Exo2-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Faculty Glyphic';
+  src: url('../public/fonts/FacultyGlyphic-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Jim Nightshade';
+  src: url('../public/fonts/JimNightshade-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Apply the font to the whole page */
+body {
+  font-family: "Exo 2", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* Popup Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  color: #ffa500;
+}
+
+/* Popup Content - Default Theme */
+.popup-content {
+  background: #222;
+  color: #00e5ff;
+  padding: 20px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  border-radius: 8px;
+  border: 2px solid #00e5ff;
+}
+
+/* Popup Content - Dark Theme */
+.popup-content.dark-theme {
+  background: #333;
+  color:#ff5500 ;
+  border: 2px solid #ffa500;
+}
+
+
+/* Popup Text */
+.popup-content h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  
+}
+
+
+
+/* Popup Buttons */
+.popup-content button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  text-shadow: 0 0 10px #0077ff, 0 0 20px #00e5ff; /* Neon button text */
+}
+
+/* Themed Button Backgrounds */
+.popup-content #use-lifeline,
+.popup-content #watch-ad-for-life,
+.popup-content #buy-life,
+.popup-content #watch-ad {
+  background: linear-gradient(90deg, #0077ff, #00e5ff);
+}
+
+.popup-content #close-popup,
+.popup-content #close-no-lives-popup {
+  background: linear-gradient(90deg, #ff5500, #ffa500); /* Use neon-orange gradient for close button */
+}
+
+/* Optional: Fade-in Animation for Popup */
+@keyframes popupFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Original Theme Styles */
+.neon-text {
+  color: #00e5ff;
+  text-shadow: 0 0 10px #00e5ff, 0 0 20px #00e5ff, 0 0 30px #00e5ff;
+}
+.neon-border {
+  border: 2px solid #00e5ff;
+  box-shadow: 0 0 10px #00e5ff, 0 0 20px #00e5ff;
+}
+.button-neon-blue {
+  background: linear-gradient(90deg, #0077ff, #00e5ff);
+  color: white;
+  text-shadow: 0 0 10px #0077ff, 0 0 20px #00e5ff;
+}
+.button-neon-orange {
+  background: linear-gradient(90deg, #ff5500, #ffa500);
+  color: white;
+  text-shadow: 0 0 10px #ff5500, 0 0 20px #ffa500;
+}
+
+/* Dark Theme Styles */
+.dark-theme {
+  background-color: #222;
+  color: #ffa500;
+}
+.dark-theme .neon-text {
+  color: #ffa500;
+  text-shadow: 0 0 10px #ffa500, 0 0 20px #ffa500, 0 0 30px #ffa500;
+}
+.dark-theme .neon-border {
+  border: 2px solid #ffa500;
+  box-shadow: 0 0 10px #ffa500, 0 0 20px #ffa500;
+}
